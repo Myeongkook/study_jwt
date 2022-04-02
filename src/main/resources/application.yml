@@ -1,5 +1,6 @@
 spring:
   datasource:
+    url: jdbc:h2:mem:testdb
     driver-class-name: org.h2.Driver
     username: sa
     password:
@@ -14,5 +15,12 @@ spring:
       hiberbate:
         format_sql: true
         show_sql: true
-logging:
-  level: debug
+    defer-datasource-initialization: true
+logging.level:
+  org.hibernate.SQL: debug
+
+
+jwt:
+  header: Authorization
+  secret: c2lsdmVybmluZS10ZWNoLXNwcmluZy1ib290LWp3dC10dXRvcmlhbC1zZWNyZXQtc2lsdmVybmluZS10ZWNoLXNwcmluZy1ib290LWp3dC10dXRvcmlhbC1zZWNyZXQK
+  token-validity-in-seconds: 86400
